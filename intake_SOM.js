@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Intake SOM
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Kijkt of script draait
+// @version      1.0.0
+// @description  Intake inladen voor SOM
 // @match        *://*/*
 // @grant        none
+// @downloadURL  https://github.com/anzwerz/som-koppeling.js
+// @updateURL    https://github.com/anzwerz/som-koppeling.js
 // ==/UserScript==
 
 (function() {
