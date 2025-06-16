@@ -5,8 +5,8 @@
 // @description  Intake inladen voor SOM
 // @match        *://*/*
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/intake_SOM.js
-// @updateURL    https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/intake_SOM.js
+// @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/intake_SOM.user.js
+// @updateURL    https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/intake_SOM.user.js
 // ==/UserScript==
 
 (function() {
