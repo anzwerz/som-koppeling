@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Intake SOM
+// @name         Intake SOM FitClinic
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Kijkt of script draait
 // @match        *://*/*
 // @grant        none
