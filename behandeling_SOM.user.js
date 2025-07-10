@@ -88,28 +88,30 @@ function getClientNumber() {
         
         const subjectiefeEl = document.getElementById('Subjectief');
 
-        if (subjectiefeEl && subjectiefeEl.innerHTML == ''){
+        if (subjectiefeEl.innerHTML == '' ){
             
-            subjectiefeEl.innerHTML = subjectief;
+            if (subjectiefeEl && subjectief) {
+                subjectiefeEl.innerHTML = subjectief;
+            }
             
 
             const objectiefeEl = document.getElementById('Objectief');
-            if (objectiefeEl) {
+            if (objectiefeEl && objectief) {
                 objectiefeEl.innerHTML = objectief;
             }
 
             const evaluatieEl = document.getElementById('Evaluatie');
-            if (evaluatieEl) {
+            if (evaluatieEl && evaluatie) {
                 evaluatieEl.innerHTML = evaluatie;
             }
 
             const planEl = document.getElementById('PlanVanAanpak');
-            if (planEl) {
+            if (planEl && plan) {
                 planEl.innerHTML = plan;
             }
 
             const opmerkingenEl = document.getElementById('Opmerkingen');
-            if (opmerkingenEl) {
+            if (opmerkingenEl && opmerkingen) {
             opmerkingenEl.innerHTML = opmerkingen;
             }
 
@@ -118,7 +120,7 @@ function getClientNumber() {
             afwijkingEl.checked = true;
 
             const afwijkingomsEl = document.getElementById('afwijkingoms');
-            if (afwijkingomsEl) {
+            if (afwijkingomsEl && afwijking) {
                 afwijkingomsEl.value = afwijking;
             }
             }

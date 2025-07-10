@@ -59,7 +59,7 @@ function getClientNumber() {
 }
 
 
-     const clientNumber = getClientNumber(); //'0606'
+     const clientNumber = getClientNumber();
      console.log('Clientnummer:', clientNumber);
 
 
