@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Behandeling SOM
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
-// @description  Kijkt of script draait
+// @version      1.0.1
+// @description  Behandeling inladen voor SOM
 // @match        *://*/*
 // @grant        none
 // @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/behandeling_SOM.user.js

@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Intake SOM FitClinic
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
-// @description  Kijkt of script draait
+// @version      1.0.2
+// @description  Intake inladen voor SOM
 // @match        *://*/*
 // @grant        none
 // @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/intake_SOM_FitClinic.user.js
@@ -198,8 +198,11 @@ function getClientNumber() {
         //Aanmelding & Screening
 
         const klachtomschrijvingEl = document.getElementById('t202_klachtomschrijving');
-        if (klachtomschrijvingEl && klachtomschrijvingEl.innerHTML == '') {
-            klachtomschrijvingEl.innerHTML = omschrijvingKlacht;
+        if (klachtomschrijvingEl.innerHTML == '') {
+
+            if (klachtomschrijvingEl && omschrijvingKlacht){
+                klachtomschrijvingEl.innerHTML = omschrijvingKlacht;
+            }
         
 
             const binnenkomst3El = document.getElementById('t202_binnenkomst3');
@@ -213,24 +216,24 @@ function getClientNumber() {
             }
 
             const verwijsdatumEl = document.getElementById('t202_verwijsdatum');
-            if (verwijsdatumEl) {
+            if (verwijsdatumEl && verwijsdatum) {
                 verwijsdatumEl.value = verwijsdatum;
             }
 
             const verwijzerbeleidEl = document.getElementById('t202_verwijzerbeleid');
-            if (verwijzerbeleidEl) {
+            if (verwijzerbeleidEl && verwijzer) {
                 verwijzerbeleidEl.innerHTML = verwijzer;
             }
 
             const dienstgewenstEl = document.getElementById('t202_dienstgewenst');
-            if (dienstgewenstEl) {
+            if (dienstgewenstEl && verrichtingGewenst) {
                 dienstgewenstEl.innerHTML = verrichtingGewenst;
                 
             }
  
 
             const klachtensindsgetalEl = document.getElementById('t203_klachtensindsgetal');
-            if (klachtensindsgetalEl) {
+            if (klachtensindsgetalEl && duurKlachtAantal) {
                 klachtensindsgetalEl.value = duurKlachtAantal;
                 
             }
@@ -292,12 +295,12 @@ function getClientNumber() {
             
 
             const afwijkendBeloopEl = document.getElementById('t202_AfwijkendBeloop');
-            if (afwijkendBeloopEl) {
+            if (afwijkendBeloopEl && toelichtingAfwijkendBeloop) {
                 afwijkendBeloopEl.innerHTML = toelichtingAfwijkendBeloop;
             }
 
             const aanbevelingEl = document.getElementById('t202_aanbeveling');
-            if (aanbevelingEl) {
+            if (aanbevelingEl && aanbevelingVervolg) {
                 aanbevelingEl.innerHTML = aanbevelingVervolg;
             }
 
@@ -329,12 +332,14 @@ function getClientNumber() {
         //Anamnese
 
         const hulpvraagEl = document.getElementById('t203_hulpvraag');
-        if (hulpvraagEl && hulpvraagEl.innerHTML == '') {
-            hulpvraagEl.innerHTML = hulpvraag;
-        
+        if (hulpvraagEl.innerHTML == '') {
+
+            if (hulpvraagEl && hulpvraag){
+                hulpvraagEl.innerHTML = hulpvraag;
+            }        
 
             const locatieaardoorzaakEl = document.getElementById('t203_locatieaardoorzaak');
-            if (locatieaardoorzaakEl) {
+            if (locatieaardoorzaakEl && beloop) {
                 locatieaardoorzaakEl.innerHTML = beloop;
             }
 
@@ -395,7 +400,7 @@ function getClientNumber() {
             
 
         const activiteit1El = document.getElementById('Activiteit1');
-            if (activiteit1El) {
+            if (activiteit1El && psk1Activiteit) {
                 activiteit1El.innerHTML = psk1Activiteit;
             }
 
@@ -420,7 +425,7 @@ function getClientNumber() {
         
 
             const activiteit2El = document.getElementById('Activiteit2');
-            if (activiteit2El) {
+            if (activiteit2El && psk2Activiteit) {
                 activiteit2El.innerHTML = psk2Activiteit;
             }
 
@@ -442,7 +447,7 @@ function getClientNumber() {
             }
 
             const activiteit3El = document.getElementById('Activiteit3');
-            if (activiteit3El) {
+            if (activiteit3El && psk3Activiteit) {
                 activiteit3El.innerHTML = psk3Activiteit;
             }
 
@@ -464,27 +469,27 @@ function getClientNumber() {
             }
 
             const stoornisFunctieEl = document.getElementById('t204_StoornisFunctie');
-            if (stoornisFunctieEl) {
+            if (stoornisFunctieEl && stoornissen) {
                 stoornisFunctieEl.innerHTML = stoornissen;
             }
 
             const beperkingActiviteitenEl = document.getElementById('t204_BeperkingActiviteiten');
-            if (beperkingActiviteitenEl) {
+            if (beperkingActiviteitenEl && beperkingen) {
                 beperkingActiviteitenEl.innerHTML = beperkingen;
             }
 
             const participatieproblemenEl = document.getElementById('t204_participatieproblemen');
-            if (participatieproblemenEl) {
+            if (participatieproblemenEl && participatie) {
                 participatieproblemenEl.innerHTML = participatie;
             }
 
             const medischefactorenEl = document.getElementById('t204_medischefactoren');
-            if (medischefactorenEl) {
+            if (medischefactorenEl && medischeFactoren) {
                 medischefactorenEl.innerHTML = medischeFactoren;
             }
 
             const externefactorenEl = document.getElementById('t204_externefactoren');
-            if (externefactorenEl) {
+            if (externefactorenEl && omgevingsdeterminanten) {
                 externefactorenEl.innerHTML = omgevingsdeterminanten;
             }
 
@@ -498,7 +503,7 @@ function getClientNumber() {
             }
 
             const persoonlijkefactorenEl = document.getElementById('t204_persoonlijkefactoren');
-            if (persoonlijkefactorenEl) {
+            if (persoonlijkefactorenEl && persoonlijkeDeterminanten) {
                 persoonlijkefactorenEl.innerHTML = persoonlijkeDeterminanten;
             }
 
@@ -513,7 +518,7 @@ function getClientNumber() {
             }
 
             const omgangswijzeEl = document.getElementById('t203_omgangswijze');
-            if (omgangswijzeEl) {
+            if (omgangswijzeEl && wijzeVanOmgang) {
                 omgangswijzeEl.innerHTML = wijzeVanOmgang;
             }
 
@@ -527,7 +532,7 @@ function getClientNumber() {
             }
 
             const invloedfactorenEl = document.getElementById('t203_invloedfactoren');
-            if (invloedfactorenEl) {
+            if (invloedfactorenEl && factorenVanInvloed) {
                 invloedfactorenEl.innerHTML = factorenVanInvloed;
             }
 
@@ -542,7 +547,7 @@ function getClientNumber() {
             }
 
             const belangrijkeOpmerkingenEl = document.getElementById('t203_BelangrijkeOpmerkingen');
-            if (belangrijkeOpmerkingenEl) {
+            if (belangrijkeOpmerkingenEl && belangrijkeOpmerkingen) {
                 belangrijkeOpmerkingenEl.innerHTML = belangrijkeOpmerkingen;
             }
 
@@ -571,7 +576,7 @@ function getClientNumber() {
 
 
             const behandelepisodeverwachtingEl = document.getElementById('t206_behandelepisodeverwachting');
-            if (behandelepisodeverwachtingEl) {
+            if (behandelepisodeverwachtingEl && verwachteDuurPatientAantal) {
                 behandelepisodeverwachtingEl.value = verwachteDuurPatientAantal;
             }
 
@@ -597,13 +602,13 @@ function getClientNumber() {
             }
 
             const patientverwachtingenEl = document.getElementById('T203_patientverwachtingen');
-            if (patientverwachtingenEl) {
+            if (patientverwachtingenEl && verwachtHerstelPatient) {
                 patientverwachtingenEl.innerHTML = verwachtHerstelPatient;
             }
 
 
             const voorlopigeconcelusieEl = document.getElementById('t203_voorlopigeconclusie');
-            if (voorlopigeconcelusieEl) {
+            if (voorlopigeconcelusieEl && voorlopigeConlusie) {
                 voorlopigeconcelusieEl.innerHTML = voorlopigeConlusie;
             }
   
@@ -613,9 +618,11 @@ function getClientNumber() {
         //Onderzoek
 
         const conclusieEl = document.getElementById('t204_conclusie');
-        if (conclusieEl && conclusieEl.innerHTML == '') {
-            conclusieEl.innerHTML = conclusieAnamnese;
-        
+        if (conclusieEl.innerHTML == '') {
+
+            if (conclusieEl && conclusieAnamnese) {
+                conclusieEl.innerHTML = conclusieAnamnese;
+            }
 
             const indicatieonderzoekaanmelding1El = document.getElementById('t202_indicatieonderzoekaanmelding1');
             if (indicatieonderzoekaanmelding1El && indicatieVoorVerderFysio && indicatieVoorVerderFysio.toLowerCase() === 'nee') {
@@ -639,32 +646,32 @@ function getClientNumber() {
 
 
             const toelichtingBijzondereBehandelingEl = document.getElementById('t204_handelingtoestemming');
-            if (toelichtingBijzondereBehandelingEl){
+            if (toelichtingBijzondereBehandelingEl && toelichtingBijzondereBehandeling){
                 toelichtingBijzondereBehandelingEl.innerHTML = toelichtingBijzondereBehandeling;
             }
 
             const inspectieEl = document.getElementById('t204_inspectie');
-            if (inspectieEl) {
+            if (inspectieEl && inspectie) {
                 inspectieEl.innerHTML = inspectie;
             }
 
             const inspectiedynamischEl = document.getElementById('t204_inspectiedynamisch');
-            if (inspectiedynamischEl) {
+            if (inspectiedynamischEl && dynamisch) {
                 inspectiedynamischEl.innerHTML = dynamisch;
             }
 
             const inspectiestatischEl = document.getElementById('t204_inspectiestatisch');
-            if (inspectiestatischEl) {
+            if (inspectiestatischEl && statisch) {
                 inspectiestatischEl.innerHTML = statisch;
             }
 
             const inspectieobservatieEl = document.getElementById('t204_inspectieobservatie');
-            if (inspectieobservatieEl) {
+            if (inspectieobservatieEl && overig) {
                 inspectieobservatieEl.innerHTML = overig;
             }
 
             const inspectiepelpatieEl = document.getElementById('t204_inspectiepalpatie');
-            if (inspectiepelpatieEl) {
+            if (inspectiepelpatieEl && palpatie) {
                 inspectiepelpatieEl.innerHTML = palpatie;
             }
 
@@ -677,8 +684,11 @@ function getClientNumber() {
 
         const werkdiagnoseEl = document.getElementById('t205_FysTherapeutDiag');
 
-        if (werkdiagnoseEl && werkdiagnoseEl.innerHTML == ''){
-            werkdiagnoseEl.innerHTML = werkdiagnose;
+        if (werkdiagnoseEl.innerHTML == ''){
+
+            if (werkdiagnoseEl && werkdiagnose){
+                werkdiagnoseEl.innerHTML = werkdiagnose;
+            }
         
 
             //TODO: aanvulling
@@ -707,8 +717,11 @@ function getClientNumber() {
         //Behandelplan
 
         const consultatieConcelusieEl = document.getElementById('t206_ConsultatieConclusie');
-        if (consultatieConcelusieEl && consultatieConcelusieEl.innerHTML == '') {
-            consultatieConcelusieEl.innerHTML = hoofddoel;
+        if (consultatieConcelusieEl.innerHTML == '') {
+
+            if (consultatieConcelusieEl && hoofddoel){
+                consultatieConcelusieEl.innerHTML = hoofddoel;
+            }
 
             const verwachtHerstelFysioEl = document.getElementById('t206_verwachthersteltherapeut');
             if (verwachtHerstelFysioEl) {
@@ -734,7 +747,7 @@ function getClientNumber() {
 
 
             const behandelepisodeverwachtingEl = document.getElementById('t206_behandelepisodeverwachting');
-                if (behandelepisodeverwachtingEl) {
+                if (behandelepisodeverwachtingEl && verwachteDuurFysioAantal) {
                         behandelepisodeverwachtingEl.value = verwachteDuurFysioAantal;
                 }
 
