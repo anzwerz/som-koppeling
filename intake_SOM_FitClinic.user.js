@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Intake SOM FitClinic
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Intake inladen voor SOM
 // @match        *://*/*
 // @grant        none
@@ -198,7 +198,7 @@ function getClientNumber() {
         //Aanmelding & Screening
 
         const klachtomschrijvingEl = document.getElementById('t202_klachtomschrijving');
-        if (klachtomschrijvingEl.innerHTML == '') {
+        if (klachtomschrijvingEl && klachtomschrijvingEl.innerHTML == '') {
 
             if (klachtomschrijvingEl && omschrijvingKlacht){
                 klachtomschrijvingEl.innerHTML = omschrijvingKlacht;
@@ -332,7 +332,7 @@ function getClientNumber() {
         //Anamnese
 
         const hulpvraagEl = document.getElementById('t203_hulpvraag');
-        if (hulpvraagEl.innerHTML == '') {
+        if (hulpvraagEl && hulpvraagEl.innerHTML == '') {
 
             if (hulpvraagEl && hulpvraag){
                 hulpvraagEl.innerHTML = hulpvraag;
@@ -618,7 +618,7 @@ function getClientNumber() {
         //Onderzoek
 
         const conclusieEl = document.getElementById('t204_conclusie');
-        if (conclusieEl.innerHTML == '') {
+        if (conclusieEl && conclusieEl.innerHTML == '') {
 
             if (conclusieEl && conclusieAnamnese) {
                 conclusieEl.innerHTML = conclusieAnamnese;
@@ -684,7 +684,7 @@ function getClientNumber() {
 
         const werkdiagnoseEl = document.getElementById('t205_FysTherapeutDiag');
 
-        if (werkdiagnoseEl.innerHTML == ''){
+        if (werkdiagnoseEl && werkdiagnoseEl.innerHTML == ''){
 
             if (werkdiagnoseEl && werkdiagnose){
                 werkdiagnoseEl.innerHTML = werkdiagnose;
@@ -717,7 +717,7 @@ function getClientNumber() {
         //Behandelplan
 
         const consultatieConcelusieEl = document.getElementById('t206_ConsultatieConclusie');
-        if (consultatieConcelusieEl.innerHTML == '') {
+        if (consultatieConcelusieEl && consultatieConcelusieEl.innerHTML == '') {
 
             if (consultatieConcelusieEl && hoofddoel){
                 consultatieConcelusieEl.innerHTML = hoofddoel;
