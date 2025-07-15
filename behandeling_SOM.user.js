@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Behandeling SOM
 // @namespace    http://tampermonkey.net/
-// @version      1.0.3
+// @version      1.0.4
 // @description  Behandeling inladen voor SOM
 // @match        *://*/*
 // @grant        none
@@ -89,7 +89,7 @@ function getClientNumber() {
         
         const subjectiefeEl = document.getElementById('Subjectief');
 
-        if (subjectiefeEl.innerHTML == '' ){
+        if (subjectiefeEl && subjectiefeEl.innerHTML == '' ){
             
             if (subjectiefeEl && subjectief) {
                 subjectiefeEl.innerHTML = subjectief;
@@ -113,17 +113,17 @@ function getClientNumber() {
 
             const opmerkingenEl = document.getElementById('Opmerkingen');
             if (opmerkingenEl && opmerkingen) {
-            opmerkingenEl.innerHTML = opmerkingen;
+                opmerkingenEl.innerHTML = opmerkingen;
             }
 
             if (afwijking && afwijking !== ''){
-            const afwijkingEl = document.getElementById('afwijking');
-            afwijkingEl.checked = true;
+                const afwijkingEl = document.getElementById('afwijking');
+                afwijkingEl.checked = true;
 
-            const afwijkingomsEl = document.getElementById('afwijkingoms');
-            if (afwijkingomsEl && afwijking) {
-                afwijkingomsEl.value = afwijking;
-            }
+                const afwijkingomsEl = document.getElementById('afwijkingoms');
+                if (afwijkingomsEl && afwijking) {
+                    afwijkingomsEl.value = afwijking;
+                }
             }
         }
 
