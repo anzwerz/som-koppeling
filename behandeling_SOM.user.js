@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Behandeling SOM
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Behandeling inladen voor SOM
 // @match        *://*/*
 // @grant        none
