@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Intake SOM
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  Intake inladen voor SOM
 // @match        *://*/*
 // @grant        none
@@ -68,7 +68,8 @@ function getClientNumber() {
 
     if (clientNumber === null){
      console.log("kan clientnummer niet vinden");
-    }
+    } else {
+         console.log("haal data op")
 
 
     fetch("https://whisper.anzwerz.ai/api/get_intake_data/", {
@@ -787,7 +788,7 @@ function getClientNumber() {
        
     });
 
-
+    }
 
 }, false);
 })();

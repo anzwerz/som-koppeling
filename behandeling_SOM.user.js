@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Behandeling SOM
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  Behandeling inladen voor SOM
 // @match        *://*/*
 // @grant        none
@@ -63,73 +63,74 @@ function getClientNumber() {
     const clientNumber = getClientNumber();
 
     if (clientNumber === null){
-     console.log("kan clientnummer niet vinden");
-    }
+        console.log("kan clientnummer niet vinden");
+    } else {
+        console.log("haal data op")
 
-    fetch("https://whisper.anzwerz.ai/api/get_treatment_data/", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': 'mijn-geheime-sleutel'
-        },
-        body: JSON.stringify({ patientnummer: String(clientNumber) })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Snowflake resultaat:', data);
-        const subjectief = data.response.subjectief;
-        const objectief = data.response.objectief;
-        const evaluatie = data.response.evaluatie;
-        const plan = data.response.plan;
-        const opmerkingen = data.response.opmerkingen;
-        const afwijking = data.response.afwijking;
+        fetch("https://whisper.anzwerz.ai/api/get_treatment_data/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-API-Key': 'mijn-geheime-sleutel'
+            },
+            body: JSON.stringify({ patientnummer: String(clientNumber) })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Snowflake resultaat:', data);
+            const subjectief = data.response.subjectief;
+            const objectief = data.response.objectief;
+            const evaluatie = data.response.evaluatie;
+            const plan = data.response.plan;
+            const opmerkingen = data.response.opmerkingen;
+            const afwijking = data.response.afwijking;
 
-        console.log(evaluatie);
+            console.log(evaluatie);
 
-        
-        const subjectiefeEl = document.getElementById('Subjectief');
-
-        if (subjectiefeEl && subjectiefeEl.innerHTML == '' ){
             
-            if (subjectiefeEl && subjectief) {
-                subjectiefeEl.innerHTML = subjectief;
-            }
-            
+            const subjectiefeEl = document.getElementById('Subjectief');
 
-            const objectiefeEl = document.getElementById('Objectief');
-            if (objectiefeEl && objectief) {
-                objectiefeEl.innerHTML = objectief;
-            }
+            if (subjectiefeEl && subjectiefeEl.innerHTML == '' ){
+                
+                if (subjectiefeEl && subjectief) {
+                    subjectiefeEl.innerHTML = subjectief;
+                }
+                
 
-            const evaluatieEl = document.getElementById('Evaluatie');
-            if (evaluatieEl && evaluatie) {
-                evaluatieEl.innerHTML = evaluatie;
-            }
+                const objectiefeEl = document.getElementById('Objectief');
+                if (objectiefeEl && objectief) {
+                    objectiefeEl.innerHTML = objectief;
+                }
 
-            const planEl = document.getElementById('PlanVanAanpak');
-            if (planEl && plan) {
-                planEl.innerHTML = plan;
-            }
+                const evaluatieEl = document.getElementById('Evaluatie');
+                if (evaluatieEl && evaluatie) {
+                    evaluatieEl.innerHTML = evaluatie;
+                }
 
-            const opmerkingenEl = document.getElementById('Opmerkingen');
-            if (opmerkingenEl && opmerkingen) {
-                opmerkingenEl.innerHTML = opmerkingen;
-            }
+                const planEl = document.getElementById('PlanVanAanpak');
+                if (planEl && plan) {
+                    planEl.innerHTML = plan;
+                }
 
-            if (afwijking && afwijking !== ''){
-                const afwijkingEl = document.getElementById('afwijking');
-                afwijkingEl.checked = true;
+                const opmerkingenEl = document.getElementById('Opmerkingen');
+                if (opmerkingenEl && opmerkingen) {
+                    opmerkingenEl.innerHTML = opmerkingen;
+                }
 
-                const afwijkingomsEl = document.getElementById('afwijkingoms');
-                if (afwijkingomsEl && afwijking) {
-                    afwijkingomsEl.value = afwijking;
+                if (afwijking && afwijking !== ''){
+                    const afwijkingEl = document.getElementById('afwijking');
+                    afwijkingEl.checked = true;
+
+                    const afwijkingomsEl = document.getElementById('afwijkingoms');
+                    if (afwijkingomsEl && afwijking) {
+                        afwijkingomsEl.value = afwijking;
+                    }
                 }
             }
-        }
 
-    });
+        });
 
-
+    }
 
 }, false);
 })();

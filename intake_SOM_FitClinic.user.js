@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Intake SOM FitClinic
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  Intake inladen voor SOM
 // @match        *://*/*
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/intake_SOM_FitClinic.user.js
-// @updateURL    https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/intake_SOM.FitClinic.user.js
+// @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/main/intake_SOM_FitClinic.user.js
+// @updateURL    https://raw.githubusercontent.com/anzwerz/som-koppeling/main/intake_SOM.FitClinic.user.js
 // ==/UserScript==
 
 (function() {
@@ -65,7 +65,8 @@ function getClientNumber() {
 
     if (clientNumber === null){
      console.log("kan clientnummer niet vinden");
-    }
+    } else {
+         console.log("haal data op")
 
 
     fetch("https://whisper.anzwerz.ai/api/get_intake_data/", {
@@ -775,7 +776,7 @@ function getClientNumber() {
        
     });
 
-
+    }
 
 }, false);
 })();
