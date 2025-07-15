@@ -5,8 +5,8 @@
 // @description  Intake inladen voor SOM
 // @match        *://*/*
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/intake_SOM_FitClinic.user.js
-// @updateURL    https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/heads/main/intake_SOM.FitClinic.user.js
+// @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/intake_SOM_FitClinic.user.js
+// @updateURL    https://raw.githubusercontent.com/anzwerz/som-koppeling/refs/intake_SOM.FitClinic.user.js
 // ==/UserScript==
 
 (function() {
