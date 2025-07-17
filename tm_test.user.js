@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Behandeling SOM
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
-// @description  Behandeling inladen voor SOM
+// @version      1.0.1
+// @description  Test
 // @match        *://*/*
 // @grant        none
 // @downloadURL  https://github.com/anzwerz/som-koppeling/raw/main/tm_test.user.js
