@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Behandeling SOM
 // @namespace    http://tampermonkey.net/
-// @version      1.0.6
+// @version      1.0.0
 // @description  Behandeling inladen voor SOM
 // @match        *://*/*
 // @grant        none
-// @downloadURL  https://gist.githubusercontent.com/robert-anzwerz/00fd820bb1a1060301cec7276b4605d2/raw/behandeling_SOM.user.js
-// @updateURL    https://gist.githubusercontent.com/robert-anzwerz/00fd820bb1a1060301cec7276b4605d2/raw/behandeling_SOM.user.js
+// @downloadURL  https://github.com/anzwerz/som-koppeling/raw/main/tm_test.user.js
+// @updateURL    https://github.com/anzwerz/som-koppeling/raw/main/tm_test.user.js
 
 // ==/UserScript==
 
