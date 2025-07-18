@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         Test TM
+// @name         Test TM Gist
 // @namespace    http://tampermonkey.net/
 // @version      1.0.0
 // @description  Test
 // @match        *://*/*
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/anzwerz/som-koppeling/main/tm_test.user.js
-// @updateURL    https://raw.githubusercontent.com/anzwerz/som-koppeling/main/tm_test.user.js
+// @downloadURL  https://gist.githubusercontent.com/robert-anzwerz/00fd820bb1a1060301cec7276b4605d2/raw/tm_test_gist.user.js
+// @updateURL    https://gist.githubusercontent.com/robert-anzwerz/00fd820bb1a1060301cec7276b4605d2/raw/tm_test_gist.user.js
 
 // ==/UserScript==
 
